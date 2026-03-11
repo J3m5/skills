@@ -1,0 +1,4 @@
+interface:
+  display_name: "Report Generator"
+  short_description: "Generate structured reports"
+  default_prompt: "Use $report-generator to analyze the source material, write the report, and generate the HTML/PDF deliverables."

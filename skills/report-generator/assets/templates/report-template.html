@@ -1,0 +1,67 @@
+$if(title)$
+<!doctype html>
+<html lang="$lang$">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=yes"
+    />
+    <title>$title$</title>
+    $for(css)$
+    <link
+      rel="stylesheet"
+      href="$css$"
+    />
+    $endfor$
+  </head>
+  <body>
+    <header class="report-header">
+      <h1>$title$</h1>
+      $if(subtitle)$
+      <p class="report-subtitle">$subtitle$</p>
+      $endif$
+    </header>
+
+    $if(sections)$
+    <section class="report-summary">
+      <h2>Synthèse</h2>
+      <ul class="summary-list">
+        $for(sections)$
+        <li class="summary-item">
+          <div class="summary-item-title">
+            $sections.title$ - $sections.summary_title$
+          </div>
+          <div class="summary-source">
+            Source du problème : $sections.summary_source$
+          </div>
+          <div class="summary-expl">$sections.summary_text$</div>
+        </li>
+        $endfor$
+      </ul>
+    </section>
+
+    $for(sections)$
+    <section class="report-section">
+      <h2>$sections.title$</h2>
+
+      $for(sections.blocks)$
+      <div class="report-block">
+        <h3>$sections.blocks.heading$</h3>
+
+        $if(sections.blocks.body)$
+        <p>$sections.blocks.body$</p>
+        $endif$ $if(sections.blocks.items)$
+        <ul>
+          $for(sections.blocks.items)$
+          <li>$sections.blocks.items$</li>
+          $endfor$
+        </ul>
+        $endif$
+      </div>
+      $endfor$
+    </section>
+    $endfor$ $else$ $body$ $endif$
+  </body>
+</html>
+$endif$

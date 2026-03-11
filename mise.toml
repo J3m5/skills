@@ -1,0 +1,5 @@
+[tools]
+pandoc = "latest"
+"pipx:weasyprint" = "latest"
+chromium = "latest"
+poppler = "latest"
