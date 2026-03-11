@@ -3,16 +3,10 @@ $if(title)$
 <html lang="$lang$">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, user-scalable=yes"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>$title$</title>
     $for(css)$
-    <link
-      rel="stylesheet"
-      href="$css$"
-    />
+    <link rel="stylesheet" href="$css$" />
     $endfor$
   </head>
   <body>
@@ -29,12 +23,8 @@ $if(title)$
       <ul class="summary-list">
         $for(sections)$
         <li class="summary-item">
-          <div class="summary-item-title">
-            $sections.title$ - $sections.summary_title$
-          </div>
-          <div class="summary-source">
-            Source du problème : $sections.summary_source$
-          </div>
+          <div class="summary-item-title">$sections.title$ - $sections.summary_title$</div>
+          <div class="summary-source">Source du problème : $sections.summary_source$</div>
           <div class="summary-expl">$sections.summary_text$</div>
         </li>
         $endfor$
