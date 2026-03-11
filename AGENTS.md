@@ -14,17 +14,9 @@ Repository tree:
 ├── .gitignore
 ├── skills/
 │   ├── .system/
-│   │   └── <skill-name>/
-│   │       ├── SKILL.md
-│   │       ├── agents/
-│   │       ├── assets/
-│   │       ├── references/
-│   │       └── scripts/
-│   └── <skill-name>/
-│       ├── SKILL.md
-│       ├── agents/
-│       ├── assets/
-│       └── references/
+│   │   ├── skill-creator/
+│   │   └── skill-installer/
+│   └── report-generator/
 └── backup/
 ```
 
