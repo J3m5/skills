@@ -1,5 +1,25 @@
+[settings]
+npm.package_manager = "pnpm"
+
 [tools]
+node = "lts"
+pnpm = "latest"
+"npm:oxfmt" = "latest"
+ruff = "latest"
 pandoc = "latest"
 "pipx:weasyprint" = "latest"
-chromium = "latest"
-poppler = "latest"
+
+[tasks.oxfmt]
+run = "oxfmt"
+
+[tasks.check]
+run = ["oxfmt --check .", "ruff check .", "ruff format . --check"]
+
+[tasks.fix]
+run = ["oxfmt .", "ruff check . --fix", "ruff format ."]
+
+[tasks.python-lint]
+run = "ruff check ."
+
+[tasks.python-format]
+run = "ruff format ."
