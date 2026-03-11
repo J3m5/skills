@@ -37,6 +37,8 @@ Check the working tree before and after changes:
 git status
 ```
 
+Always run `mise` tasks with `mise run --raw <task>` in this repository. Do not use plain `mise run <task>`, because it can leave lingering background terminals in this environment.
+
 Run skill-specific commands from the relevant skill directory when examples in `SKILL.md` use relative paths.
 
 ## Coding Style & Naming Conventions
@@ -52,6 +54,7 @@ This repository does not currently have an automated test suite. Validate change
 - checking Markdown for broken relative paths
 - verifying referenced commands still match the documented toolchain
 - running a minimal skill workflow when changing templates or command examples
+- running skill validation helpers when available, for example `python3 skills/.system/skill-creator/scripts/quick_validate.py`
 
 ## Commit & Pull Request Guidelines
 
