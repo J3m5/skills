@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Usage Report"
+  short_description: "Collect Codex usage report details"
+  default_prompt: "Use $codex-usage-report to gather local Codex setup details, ask for the remaining user-reported fields, and generate a GitHub-ready usage-consumption issue comment."
