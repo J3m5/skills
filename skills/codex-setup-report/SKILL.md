@@ -1,5 +1,5 @@
 ---
-name: codex-usage-report
+name: codex-setup-report
 description: Gather a Codex usage-consumption report from the local machine and draft a GitHub issue comment using documented current defaults plus local config checks. Use when the user reports Codex usage limits draining too fast, wants to fill a setup template for openai/codex issues, or needs a reproducible workflow for collecting Codex setup details and comparing them against the currently documented defaults.
 ---
 
@@ -18,7 +18,7 @@ Prefer verified local facts for machine-state fields and ask the user directly f
 Ask the user for the subjective fields first, then run the helper script with those answers:
 
 ```bash
-python3 ~/.codex/skills/codex-usage-report/scripts/collect_local_setup.py \
+python3 ~/.codex/skills/codex-setup-report/scripts/collect_local_setup.py \
   --workspace "$PWD" \
   --format markdown \
   --status-line "[short status line]" \
