@@ -41,6 +41,7 @@ This gathers:
 - Matching project entry from the main config file for the current workspace
 - Auth mode and plan type from `~/.codex/auth.json`
 - Available skill count from local skill directories
+- Number of enabled MCP servers from the main config file
 - `AGENTS.md` size for the provided workspace
 - Recent session context-window and compaction signals from `~/.codex/sessions`
 - A ready-to-paste Markdown report when the user answers are provided as script arguments

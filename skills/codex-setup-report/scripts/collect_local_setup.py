@@ -184,6 +184,19 @@ def count_available_skills() -> int:
     return count
 
 
+def count_enabled_mcps(config: dict) -> int:
+    servers = config.get("mcp_servers") or {}
+    if not isinstance(servers, dict):
+        return 0
+    count = 0
+    for value in servers.values():
+        if not isinstance(value, dict):
+            continue
+        if bool(value.get("enabled", True)):
+            count += 1
+    return count
+
+
 def find_agents_size(workspace: Path) -> tuple[Path | None, int | None]:
     candidates = sorted(
         list(workspace.rglob("AGENTS.md")) + list(workspace.rglob("agents.md")),
@@ -350,6 +363,7 @@ def render_markdown(data: dict, args: argparse.Namespace) -> str:
             f"- Do you use many MCPs or skills? **{args.skills_usage.strip()}**"
         )
     lines.append(f"- Number of available skills: **{data['available_skill_count']}**")
+    lines.append(f"- Number of enabled MCPs: **{data['enabled_mcp_count']}**")
     if args.affected_models:
         lines.append(
             f"- Does this affect gpt-5.3-codex, gpt-5.4, or both? **{args.affected_models.strip()}**"
@@ -413,6 +427,7 @@ def main() -> None:
         "auth_mode": auth_mode,
         "plan_type": plan_type,
         "available_skill_count": count_available_skills(),
+        "enabled_mcp_count": count_enabled_mcps(config),
         "agents_md_path": str(agents_path) if agents_path else None,
         "agents_md_bytes": agents_size,
         "recent_context_windows": sessions["recent_context_windows"],
