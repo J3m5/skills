@@ -1,0 +1,3 @@
+interface:
+  display_name: "Skill Review and Auto Refactor"
+  short_description: "Audit and improve an existing Codex or OpenAI skill"
