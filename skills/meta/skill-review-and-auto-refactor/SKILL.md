@@ -130,10 +130,10 @@ Before returning:
 - confirm that the output contract is strict
 - confirm that no missing assets or tools are claimed
 
-If you edited any skill files, run:
+If you edited any skill files, run this validation helper from the repository root:
 
 ```bash
-python3 .codex/skills/.system/skill-creator/scripts/quick_validate.py <skill_directory>
+python3 skills/.system/skill-creator/scripts/quick_validate.py <skill_directory>
 ```
 
 If validation fails, fix the skill before returning.

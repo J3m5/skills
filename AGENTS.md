@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository packages Codex skills for reuse. Published skills live under category folders such as `skills/meta/<skill-name>/` or `skills/reporting/<skill-name>/`. Each skill should be self-contained and centered on a `SKILL.md`, with supporting material in `agents/`, `assets/`, and `references/` as needed.
+This repository packages Agent Skills for reuse. Published skills live under category folders such as `skills/meta/<skill-name>/` or `skills/reporting/<skill-name>/`. Each skill should be self-contained and centered on a `SKILL.md`, with supporting material in `agents/`, `assets/`, and `references/` as needed.
 
 Repository tree:
 
@@ -28,7 +28,7 @@ Repository tree:
 ```
 
 `backup/` is intentionally local-only and ignored by Git. Do not place publishable skill content there.
-Use `skills/.system/` for repository-managed system skills and `skills/<category>/<skill-name>/` for general published skills. Current categories include `meta/` for Codex and skill-maintenance workflows and `reporting/` for report authoring and publishing workflows.
+Use `skills/.system/` for repository-managed system skills and `skills/<category>/<skill-name>/` for general published skills. Current categories include `meta/` for agent, Codex, and skill-maintenance workflows and `reporting/` for report authoring and publishing workflows.
 
 ## Build, Test, and Development Commands
 
