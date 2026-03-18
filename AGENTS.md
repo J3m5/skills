@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository packages Codex skills for reuse. Published skills live under `skills/<skill-name>/`. Each skill should be self-contained and centered on a `SKILL.md`, with supporting material in `agents/`, `assets/`, and `references/` as needed.
+This repository packages Codex skills for reuse. Published skills live under category folders such as `skills/meta/<skill-name>/` or `skills/reporting/<skill-name>/`. Each skill should be self-contained and centered on a `SKILL.md`, with supporting material in `agents/`, `assets/`, and `references/` as needed.
 
 Repository tree:
 
@@ -17,14 +17,18 @@ Repository tree:
 │   ├── .system/
 │   │   ├── skill-creator/
 │   │   └── skill-installer/
-│   └── report-generator/
+│   ├── meta/
+│   │   ├── codex-setup-report/
+│   │   └── skill-review-and-auto-refactor/
+│   └── reporting/
+│       └── report-generator/
 ├── docs/
 │   └── agentsskills/   # local upstream reference clone, ignored by Git
 └── backup/
 ```
 
 `backup/` is intentionally local-only and ignored by Git. Do not place publishable skill content there.
-Use `skills/.system/` for repository-managed system skills and `skills/<skill-name>/` for general published skills.
+Use `skills/.system/` for repository-managed system skills and `skills/<category>/<skill-name>/` for general published skills. Current categories include `meta/` for Codex and skill-maintenance workflows and `reporting/` for report authoring and publishing workflows.
 
 ## Build, Test, and Development Commands
 
@@ -58,7 +62,7 @@ Run skill-specific commands from the relevant skill directory when examples in `
 
 ## Coding Style & Naming Conventions
 
-Use Markdown for documentation and keep instructions concise, imperative, and task-focused. Prefer ASCII unless the file already uses another language or character set. Name skills with kebab-case directories such as `report-generator`. Keep supporting paths predictable: `agents/openai.yaml`, `assets/templates/`, `references/`.
+Use Markdown for documentation and keep instructions concise, imperative, and task-focused. Prefer ASCII unless the file already uses another language or character set. Name skills with kebab-case directories such as `report-generator`, nested under a stable category directory. Keep supporting paths predictable: `agents/openai.yaml`, `assets/templates/`, `references/`.
 
 Repository formatting is managed by `oxfmt` and Python formatting by `ruff format`. When adding tooling, declare it in `mise.toml`; use `node = "lts"` and `pnpm = "latest"` for npm-backed `mise` tools, and prefer `latest` unless the repository intentionally pins otherwise.
 Keep this `AGENTS.md` in sync with the actual repository state and with durable user preferences, recommendations, and workflow instructions that should continue to guide future work in this repo.

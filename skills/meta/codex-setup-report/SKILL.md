@@ -18,7 +18,7 @@ Prefer verified local facts for machine-state fields and ask the user directly f
 Ask the user for the subjective fields first, then run the helper script with those answers:
 
 ```bash
-python3 ~/.codex/skills/codex-setup-report/scripts/collect_local_setup.py \
+python3 ~/.codex/skills/meta/codex-setup-report/scripts/collect_local_setup.py \
   --workspace "$PWD" \
   --format markdown \
   --status-line "[short status line]" \

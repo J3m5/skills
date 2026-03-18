@@ -6,7 +6,7 @@ Skills are self-contained folders with instructions, scripts, and supporting ass
 
 ## Structure
 
-Each skill lives in its own directory and is typically centered around a `SKILL.md` file.
+Each skill lives under a category directory such as `skills/meta/` or `skills/reporting/` and is typically centered around a `SKILL.md` file.
 
 ## Usage
 
