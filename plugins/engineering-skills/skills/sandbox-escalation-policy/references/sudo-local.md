@@ -6,6 +6,11 @@ installed `sudo` and `sudoers` manuals when host policy or version matters.
 
 ## Select a working channel
 
+Check the active binary with `sudo --version` and its options with
+`sudo --help` when choosing an authentication channel. A host can have both
+classic sudo and sudo-rs installed. Use the capabilities of the binary that
+the command will actually run.
+
 - **Noninteractive.** Use `sudo -n` when prompts are unavailable. It fails if
   authentication requires a prompt. Inspect the diagnostic before retrying,
   since the exit status can also come from the command itself.

@@ -20,6 +20,28 @@ directly. Request the remote TTY separately from any local PTY using SSH's
 `-t` when authentication requires it. If no such channel is available, identify
 the exact authentication step the user must perform.
 
+## Headless hosts and remote askpass
+
+Check `sudo --version` and `sudo --help` on the destination before choosing
+an authentication path. The remote host may use classic sudo or sudo-rs.
+Package presence and the local machine's sudo version do not establish which
+options the remote command supports.
+
+If the destination supports `sudo -A` and already has a trusted askpass
+helper, check its configuration in the session that will run sudo. A helper
+configured through `SUDO_ASKPASS` must be available and executable on the
+destination. Shell startup settings can differ between interactive and
+noninteractive SSH sessions.
+
+- **TTY-backed helper.** If the helper reads `/dev/tty`, run it through
+  `sudo -A` in a remote TTY the user can interact with. From a user-operated
+  terminal, `ssh -t <host>` can allocate that channel. A tool-owned PTY
+  alone cannot collect the user's password.
+- **Graphical helper.** A configured GUI helper needs an accessible
+  graphical session. On a headless host, use the existing TTY-backed helper
+  or a user-operated terminal with ordinary interactive sudo, according to
+  the destination's configuration.
+
 ## Keep passwords off the command input stream
 
 Do not pipe a local password helper into `ssh` and `sudo -S`. Both sides of the
