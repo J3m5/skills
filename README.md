@@ -25,10 +25,11 @@ codex plugin remove browser-harness@j3m5-skills
 
 | Area                             | Skills                                                             |
 | -------------------------------- | ------------------------------------------------------------------ |
-| Version control                  | `git-core`, `github`, `hk`                                         |
+| Version control                  | `git-core`, `github`, `glab`, `hk`                                 |
 | Documentation and version checks | `documentation-policy`, `doc-grounding`, `version-first-grounding` |
 | Tooling and permissions          | `mise`, `sandbox-escalation-policy`                                |
 | Automated testing                | `test-engineering`                                                 |
+| Continuous integration           | `gitlab-ci-skill`                                                  |
 | Browser automation               | `playwright-cli`, `browser-harness`                                |
 | Collaboration and publishing     | `write-and-publish`                                                |
 

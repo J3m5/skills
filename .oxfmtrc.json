@@ -2,6 +2,8 @@
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "ignorePatterns": [
     "plugins/engineering-skills/skills/browser-harness/references/interaction-skills/**",
+    "plugins/engineering-skills/skills/gitlab-ci-skill/**",
+    "plugins/engineering-skills/skills/glab/references/**",
     "plugins/engineering-skills/skills/playwright-cli/SKILL.md",
     "plugins/engineering-skills/skills/playwright-cli/references/**",
     "plugins/engineering-skills/skills/test-engineering/assets/vitest/shared/**",

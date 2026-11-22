@@ -2,3 +2,5 @@
 /docs/agentsskills/
 /node_modules/
 /plugins/engineering-skills/.playwright-cli-sync/
+/plugins/engineering-skills/.glab-sync/
+/plugins/engineering-skills/.gitlab-ci-skill-sync/

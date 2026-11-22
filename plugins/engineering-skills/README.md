@@ -44,3 +44,27 @@ python3 plugins/engineering-skills/scripts/sync_browser_harness.py --version 0.1
 Use `--source PATH` to read the tag from a local Git checkout. Add `--check`
 to validate without writing, and `--target PATH` with `--check` to compare a
 packaged or installed skill directory with the rendered output.
+
+## GitLab CLI and CI
+
+Use `engineering-skills:glab` for GitLab operations through the [GitLab CLI](https://docs.gitlab.com/cli/).
+Use `engineering-skills:gitlab-ci-skill` to author and debug pipelines. The CI
+skill uses [glci](https://gitlab.com/gitlab-org/ci-cd/runner-tools/glci)
+for local verification and offers `glab ci lint` as a fallback.
+
+Sync and validate from the marketplace repository root:
+
+```sh
+mise run --raw sync:glab -- --check
+mise run --raw sync:gitlab-ci -- --check
+```
+
+Both tasks default to the exact upstream commit recorded in their skill.
+Run without `--check` to regenerate the bundled files. Pass `--ref <revision>`
+to select a new commit or tag and review the diff before release. For `glab`,
+choose the revision corresponding to the CLI release you intend to support.
+Use `--checkout <path>` to use a Git checkout containing the revision offline.
+
+The synchronizer preserves the maintained [glab entrypoint](skills/glab/SKILL.md)
+and regenerates its five references. It copies the official CI verification script
+and documentation, with the create-pipeline and add-job workflows in separate files.

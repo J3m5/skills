@@ -2,6 +2,8 @@
 # Keep imported skill documentation byte-for-byte identical to upstream.
 exclude = [
   "plugins/engineering-skills/skills/browser-harness/references/interaction-skills/**",
+  "plugins/engineering-skills/skills/gitlab-ci-skill/**",
+  "plugins/engineering-skills/skills/glab/references/**",
   "plugins/engineering-skills/skills/playwright-cli/SKILL.md",
   "plugins/engineering-skills/skills/playwright-cli/references/**",
 ]

@@ -24,4 +24,12 @@ run = "ruff format ."
 
 [tasks."sync:playwright-cli"]
 description = "Sync the Playwright CLI skill from Microsoft's Git repository"
-run = "python3 plugins/engineering-skills/scripts/sync_playwright_cli.py"
+run = "python3 -B plugins/engineering-skills/scripts/sync_playwright_cli.py"
+
+[tasks."sync:glab"]
+description = "Sync the bundled GitLab CLI skill and split its references"
+run = "python3 -B plugins/engineering-skills/scripts/sync_gitlab_skills.py glab"
+
+[tasks."sync:gitlab-ci"]
+description = "Sync the official GitLab CI skill and split its workflows"
+run = "python3 -B plugins/engineering-skills/scripts/sync_gitlab_skills.py gitlab-ci-skill"
