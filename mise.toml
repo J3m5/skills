@@ -6,8 +6,6 @@ node = "lts"
 pnpm = "latest"
 "npm:oxfmt" = "latest"
 ruff = "latest"
-pandoc = "latest"
-"pipx:weasyprint" = "latest"
 
 [tasks.oxfmt]
 run = "oxfmt"

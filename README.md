@@ -11,7 +11,7 @@ codex plugin marketplace add J3m5/skills
 codex plugin add engineering-skills@j3m5-skills
 ```
 
-If you already added the marketplace, run `codex plugin marketplace upgrade j3m5-skills` before installing the plugin. Open a new Codex session to use the skills.
+Open a new Codex session to use the skills. Use `codex plugin marketplace upgrade j3m5-skills` to refresh an existing installation from GitHub.
 
 ## Included skills
 
