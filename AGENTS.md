@@ -2,7 +2,7 @@
 
 ## Project Structure & Module Organization
 
-This repository packages Agent Skills for reuse. The Codex marketplace at `.agents/plugins/marketplace.json` lists local packages under `plugins/` and can reference remote Git packages. Put locally maintained skills in `plugins/<plugin-name>/skills/<skill-name>/`. Each skill should be self-contained and centered on a `SKILL.md`, with supporting material in `agents/`, `assets/`, and `references/` as needed.
+This repository packages Agent Skills for reuse. The Codex marketplace at `.agents/plugins/marketplace.json` publishes the `engineering-skills` plugin. Put skills in `plugins/engineering-skills/skills/<skill-name>/`. Each skill should be self-contained and centered on a `SKILL.md`, with supporting material in `agents/`, `assets/`, and `references/` as needed. Follow the [plugin guide](plugins/engineering-skills/README.md) when updating bundled upstream material.
 
 Repository tree:
 
@@ -15,7 +15,6 @@ Repository tree:
 ├── .oxfmtrc.json
 ├── .gitignore
 ├── plugins/
-│   ├── browser-harness/
 │   └── engineering-skills/
 ├── docs/
 │   └── agentsskills/   # local upstream reference clone, ignored by Git

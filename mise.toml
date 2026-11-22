@@ -21,3 +21,7 @@ run = "ruff check ."
 
 [tasks.python-format]
 run = "ruff format ."
+
+[tasks."sync:playwright-cli"]
+description = "Sync the Playwright CLI skill from Microsoft's Git repository"
+run = "python3 plugins/engineering-skills/scripts/sync_playwright_cli.py"

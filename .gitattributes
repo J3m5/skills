@@ -1,0 +1,2 @@
+# Preserve the line endings in the original Microsoft license.
+/plugins/engineering-skills/skills/playwright-cli/LICENSE -text whitespace=cr-at-eol

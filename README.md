@@ -13,18 +13,12 @@ codex plugin add engineering-skills@j3m5-skills
 
 Open a new Codex session to use the skills. Use `codex plugin marketplace upgrade j3m5-skills` to refresh an existing installation from GitHub.
 
-Install the optional [Microsoft Playwright CLI skill](https://github.com/microsoft/playwright-cli/tree/main/skills/playwright-cli) as a separate plugin:
+Version 0.4.0 includes Playwright CLI and Browser Harness. After updating,
+remove the former standalone plugins if you previously installed them:
 
 ```bash
-codex plugin add playwright-cli@j3m5-skills
-```
-
-The plugin follows Microsoft's `main` branch and updates with `codex plugin marketplace upgrade j3m5-skills`. Use `playwright-cli:playwright-cli` in Codex. The skill requires the [Playwright CLI executable](https://playwright.dev/agent-cli/introduction).
-
-Install [Browser Harness](./plugins/browser-harness/README.md) for interactive work in a local Chrome or Chromium session:
-
-```bash
-codex plugin add browser-harness@j3m5-skills
+codex plugin remove playwright-cli@j3m5-skills
+codex plugin remove browser-harness@j3m5-skills
 ```
 
 ## Included skills
@@ -35,13 +29,18 @@ codex plugin add browser-harness@j3m5-skills
 | Documentation and version checks | `documentation-policy`, `doc-grounding`, `version-first-grounding` |
 | Tooling and permissions          | `mise`, `sandbox-escalation-policy`                                |
 | Automated testing                | `test-engineering`                                                 |
+| Browser automation               | `playwright-cli`, `browser-harness`                                |
 | Collaboration and publishing     | `write-and-publish`                                                |
+
+Browser automation requires the corresponding Playwright CLI or Browser Harness
+executable. See the [plugin guide](./plugins/engineering-skills/README.md) for
+setup and how to refresh the bundled skills.
 
 ## Package a skill
 
-Add packaged skills under `plugins/<plugin-name>/skills/<skill-name>/` with a `SKILL.md` and any resources they use. Add the plugin package to the [marketplace manifest](./.agents/plugins/marketplace.json) when it is ready to distribute.
-
-An external plugin can be listed directly from Git using a `url` or `git-subdir` source. Link to the plugin package and pin its Git ref or SHA as needed. [Codex marketplace format](https://developers.openai.com/plugins/build/plugins#marketplace-metadata)
+Add packaged skills under `plugins/engineering-skills/skills/<skill-name>/`
+with a `SKILL.md` and any resources they use. The [marketplace
+manifest](./.agents/plugins/marketplace.json) lists the plugin.
 
 ## Tooling
 
