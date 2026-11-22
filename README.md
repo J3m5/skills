@@ -13,6 +13,14 @@ codex plugin add engineering-skills@j3m5-skills
 
 Open a new Codex session to use the skills. Use `codex plugin marketplace upgrade j3m5-skills` to refresh an existing installation from GitHub.
 
+Install the optional [Microsoft Playwright CLI skill](https://github.com/microsoft/playwright-cli/tree/main/skills/playwright-cli) as a separate plugin:
+
+```bash
+codex plugin add playwright-cli@j3m5-skills
+```
+
+The plugin follows Microsoft's `main` branch and updates with `codex plugin marketplace upgrade j3m5-skills`. Use `playwright-cli:playwright-cli` in Codex. The skill requires the [Playwright CLI executable](https://playwright.dev/agent-cli/introduction).
+
 ## Included skills
 
 | Area                             | Skills                                                             |
