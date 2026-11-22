@@ -12,22 +12,27 @@ documentation subtree. Package version `x.y.z` need not map to tag `vx.y.z`.
 Inspect GitHub-hosted source with the available GitHub workflow, or use the
 appropriate provider connector or Git tooling.
 
+Choose the destination using [mirror-storage.md](mirror-storage.md).
+
 For a managed system-tool or dependency snapshot:
 
 ```bash
 python3 scripts/import_git_snapshot.py \
   --repo <repository-url> --ref <verified-ref> \
   --subdir <path/to/docs> \
-  --dest <shared-destination> --name <docs-name> \
+  --dest <snapshot-root> --name <docs-name> \
   --kind project-dependency --installed-version <version> \
   --fetch-date <YYYY-MM-DD> \
   --notes <reason-for-git-fallback-and-version-limitations>
 python3 scripts/verify_snapshot.py \
-  --snapshot-dir <shared-destination> \
+  --snapshot-dir <snapshot-root> \
   --expect-name <docs-name> --expect-kind project-dependency \
   --expect-installed-version <version>
-python3 scripts/update_catalog.py --docs-root ~/.agents/docs/project-dependencies
 ```
+
+If the mirror maintains a catalog, update it with
+`python3 scripts/update_catalog.py --docs-root <catalog-root>`.
+Use the directory that groups the snapshots indexed by that catalog.
 
 Use `--kind system-tool` and the corresponding root for system tools. Add
 `--replace` only when replacing an existing canonical snapshot is intended.
@@ -41,6 +46,6 @@ selected subtree. It does not use sparse checkout. If repository size or network
 cost warrants a manual partial clone or sparse checkout, use the relevant Git
 workflow, materialize the requested files, and retain equivalent provenance.
 
-Repository-specific source material under `project/` is outside the managed
+Repository-specific source material is outside the managed
 manifest/catalog schema. Preserve its source identity without labeling it as a
 dependency snapshot merely to use these commands.

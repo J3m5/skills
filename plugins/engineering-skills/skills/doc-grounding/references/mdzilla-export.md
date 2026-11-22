@@ -1,6 +1,6 @@
 # mdzilla Export
 
-Use `mdzilla --export` directly for new Markdown mirrors. Choose the shared
+Use `mdzilla --export` directly for new Markdown mirrors. Choose the
 destination from [mirror-storage.md](mirror-storage.md).
 
 ## Sources
@@ -25,7 +25,7 @@ The CLI's Git routing uses `gh:`; other providers may require the
 ## Export and inspect
 
 ```bash
-mdzilla <source> --export <shared-destination>
+mdzilla <source> --export <snapshot-root>
 ```
 
 Inspect entrypoints and representative pages, not just the file count. Compare
@@ -40,11 +40,11 @@ For a managed system-tool or dependency snapshot, add provenance with:
 
 ```bash
 python3 scripts/write_manifest.py \
-  --output-dir <shared-destination> --name <docs-name> \
+  --output-dir <snapshot-root> --name <docs-name> \
   --kind project-dependency --installed-version <version> \
   --source-type <github|http|npm|local> --chosen-docs-source <source> \
   --fetch-date <YYYY-MM-DD>
-python3 scripts/verify_snapshot.py --snapshot-dir <shared-destination>
+python3 scripts/verify_snapshot.py --snapshot-dir <snapshot-root>
 ```
 
 Use absolute paths for local sources so a later refresh works from another
@@ -55,16 +55,10 @@ material does not require managed manifests.
 ## Refresh
 
 ```bash
-python3 scripts/refresh_snapshot.py --snapshot-dir <shared-destination>
+python3 scripts/refresh_snapshot.py --snapshot-dir <snapshot-root>
 ```
 
 The script supports `github`, `http`, `npm`, and `local`, plus existing
 `mdzilla` and `mdzilla-github` manifests. Git snapshots use their recorded Git
 source and ref. See [snapshot-lifecycle.md](snapshot-lifecycle.md) for history,
 dry runs, and changing versions.
-
-## OpenAI Developers mirrors
-
-Reuse `~/.agents/docs/global/ai/openai/portal/` when it already contains the
-required documentation. Verify the scope of section exports before creating
-another snapshot; filtered local indexes can avoid duplicating the same graph.

@@ -1,6 +1,6 @@
 ---
 name: doc-grounding
-description: Consult primary documentation when implementing or diagnosing behavior that depends on an API, library, framework, or tool contract. Retrieve missing sources and create or refresh shared local documentation mirrors when useful or requested.
+description: Consult primary documentation when implementing or diagnosing behavior that depends on an API, library, framework, or tool contract. Retrieve missing sources and create or refresh local documentation mirrors when useful or requested.
 ---
 
 # Doc Grounding
@@ -60,7 +60,8 @@ after acquiring it. For a mirror-only request, finish when the mirror is ready.
 
 Load only the references needed for the acquisition:
 
-- Choose or reuse a shared destination and record provenance:
+- Follow the project's instructions for mirror storage when available.
+  To choose a location and record provenance, see
   [mirror-storage.md](references/mirror-storage.md).
 - Export a new HTTP, npm, GitHub, or local Markdown source:
   [mdzilla-export.md](references/mdzilla-export.md).

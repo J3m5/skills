@@ -1,17 +1,17 @@
-# Shared Mirror Storage
+# Mirror Storage
 
-Reuse documentation under `~/.agents/docs/` across projects:
+Use the destination specified for the task or documented by the project.
+Otherwise, reuse an existing mirror when its scope and version fit. If a new
+mirror is needed, choose a root that fits its intended use.
 
-| Material                            | Snapshot root                         |
-| ----------------------------------- | ------------------------------------- |
-| Cross-project documentation         | `global/<group>/<docs-name>/`         |
-| Current system-tool documentation   | `system-tools/<tool-name>/`           |
-| Reusable versioned dependency       | `project-dependencies/<docs-name>/`   |
-| Repository-specific source material | `project/<project-name>/<docs-name>/` |
+- `~/.agents/docs/` is an example root for mirrors reused across projects.
+- `.agents/docs/` at the current project's root is an example for mirrors
+  scoped to that project.
 
-Follow existing groups and canonical paths. Inspect the active snapshot and its
-`history/` before exporting another copy. Keep the current snapshot at a stable
-path and intentionally retained versions in `history/<version-or-ref>/`.
+Use the existing layout within the chosen root. Inspect the active snapshot
+and its `history/` before exporting another copy. Keep the current snapshot
+at a stable path and intentionally retained versions in
+`history/<version-or-ref>/`.
 
 For managed system-tool and dependency snapshots, use the scripts to record
 source, selected ref or URL, dependency version, fetch date, and relevant
@@ -28,7 +28,6 @@ When refreshing a mirror with local indexes or checksums, inspect how those
 files are maintained and preserve or regenerate them deliberately. Refreshing
 the upstream snapshot alone does not update that local navigation.
 
-The commands in the acquisition references use paths relative to this skill
-directory. Run them from that directory or resolve their script paths against it.
-Use the effective project or system tooling and respect filesystem permissions;
-a shared destination does not itself grant write access.
+In the acquisition references, resolve `scripts/` against the skill directory
+and project-local destinations against the project root. Use absolute paths
+when invoking the scripts from a different working directory.
