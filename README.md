@@ -21,6 +21,12 @@ codex plugin add playwright-cli@j3m5-skills
 
 The plugin follows Microsoft's `main` branch and updates with `codex plugin marketplace upgrade j3m5-skills`. Use `playwright-cli:playwright-cli` in Codex. The skill requires the [Playwright CLI executable](https://playwright.dev/agent-cli/introduction).
 
+Install [Browser Harness](./plugins/browser-harness/README.md) for interactive work in a local Chrome or Chromium session:
+
+```bash
+codex plugin add browser-harness@j3m5-skills
+```
+
 ## Included skills
 
 | Area                             | Skills                                                             |

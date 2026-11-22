@@ -15,9 +15,8 @@ Repository tree:
 ├── .oxfmtrc.json
 ├── .gitignore
 ├── plugins/
+│   ├── browser-harness/
 │   └── engineering-skills/
-│       ├── plugin.json
-│       └── skills/
 ├── docs/
 │   └── agentsskills/   # local upstream reference clone, ignored by Git
 └── backup/

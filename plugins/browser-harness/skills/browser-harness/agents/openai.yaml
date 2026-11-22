@@ -1,0 +1,7 @@
+interface:
+  display_name: Browser Harness
+  short_description: Control a local Chromium browser over CDP
+  default_prompt: Use $browser-harness to interact with the intended local browser tab.
+
+policy:
+  allow_implicit_invocation: true
