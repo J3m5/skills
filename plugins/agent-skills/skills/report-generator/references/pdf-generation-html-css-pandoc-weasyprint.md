@@ -94,6 +94,7 @@ Example:
 
 ```bash
 pandoc assets/templates/report-example.md \
+  --standalone --embed-resources \
   --template=assets/templates/report-template.html \
   --css=assets/templates/report-template.css \
   -o report.html

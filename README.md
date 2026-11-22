@@ -1,34 +1,30 @@
 # Agent Skills
 
-This repository contains local Agent Skills.
+This repository publishes reusable Agent Skills through a Codex marketplace.
 
 Skills are self-contained folders with instructions, scripts, and supporting assets that help agents execute recurring tasks consistently.
 
-## Structure
+## Install in Codex
 
-Each skill lives under a category directory such as `skills/meta/` or `skills/reporting/` and is typically centered around a `SKILL.md` file.
+```bash
+codex plugin marketplace add J3m5/skills
+codex plugin add agent-skills@j3m5-skills
+```
 
-This layout is repository-local. For installed Codex skills, prefer `~/.codex/skills/`.
+Start a new Codex session and select `report-generator` from the skill picker.
+To refresh the catalog, run `codex plugin marketplace upgrade j3m5-skills`.
 
-## Available Skills
+## Marketplace skills
 
-### `.system`
+- [`report-generator`](./plugins/agent-skills/skills/report-generator/SKILL.md) turns source material into a structured report and renders it to HTML and PDF. The render workflow uses Pandoc and WeasyPrint.
 
-- `skill-creator`: Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations.
-- `skill-installer`: Install Agent Skills into `$CODEX_HOME/skills` from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo, including a private repo.
+Add packaged skills under `plugins/agent-skills/skills/<skill-name>/` with a `SKILL.md` and any resources they use. The [marketplace manifest](./.agents/plugins/marketplace.json) points to the [plugin package](./plugins/agent-skills/plugin.json).
 
-### `meta`
+## Legacy skills
 
-- `codex-setup-report`: Gather a Codex usage-consumption report from the local machine and draft a GitHub issue comment using documented current defaults plus local config checks. Use when the user reports Codex usage limits draining too fast, wants to fill a setup template for `openai/codex` issues, or needs a reproducible workflow for collecting Codex setup details and comparing them against the documented defaults.
-- `skill-review-and-auto-refactor`: Audit and improve an existing Codex or OpenAI skill bundle or `SKILL.md` for clearer routing, stricter workflow instructions, and safer repeatable execution. Use only for existing skills, not for generic code review or net-new skill creation.
-
-### `reporting`
-
-- `report-generator`: Generate or update a structured report from source material, then publish HTML/PDF deliverables. Use when the user asks to review a report file, analyze source inputs, write a structured report, or regenerate a styled PDF report with Pandoc and WeasyPrint.
-
-## Usage
-
-Point Codex at this repository or copy individual skill folders into your local `~/.codex/skills/` directory, depending on how you manage skill distribution.
+- [`codex-setup-report`](./skills/meta/codex-setup-report/SKILL.md) needs a refresh of its Codex defaults and the data it collects for shareable reports.
+- [`skill-review-and-auto-refactor`](./skills/meta/skill-review-and-auto-refactor/SKILL.md) overlaps with current skill authoring guidance. Its separate workflow is most relevant for audit-only reviews.
+- [`skill-creator`](./skills/.system/skill-creator/SKILL.md) and [`skill-installer`](./skills/.system/skill-installer/SKILL.md) are historical copies of Codex system skills.
 
 ## Tooling
 
