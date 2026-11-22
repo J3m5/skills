@@ -21,6 +21,7 @@ Open a new Codex session to use the skills. Use `codex plugin marketplace upgrad
 | Documentation and version checks | `documentation-policy`, `doc-grounding`, `version-first-grounding` |
 | Tooling and permissions          | `mise`, `sandbox-escalation-policy`                                |
 | Automated testing                | `test-engineering`                                                 |
+| Collaboration and publishing     | `write-and-publish`                                                |
 
 ## Package a skill
 
