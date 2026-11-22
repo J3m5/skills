@@ -1,0 +1,309 @@
+{
+  "schema_version": 1,
+  "repository": "https://github.com/vitest-dev/vitest",
+  "captured_at": "2026-10-05T15:04:24+00:00",
+  "selection": "Latest stable release in each requested major (5 and 4), corroborated by npm dist-tags; prereleases excluded. Retain separate v4 files only for substantive documentation differences.",
+  "license": "LICENSE",
+  "transformations": [
+    "Inline VitePress Markdown includes (CLI generated options).",
+    "Rewrite links to exported pages within the same release; preserve other upstream links.",
+    "Convert VitePress callout/tab wrappers and Version/CRoot display components to text.",
+    "Convert coverage flow diagrams to ordered text; remove their presentation-only Vue imports.",
+    "Represent screenshots by their alternative text; image binaries are not bundled.",
+    "Add explicit heading anchors; preserve fenced code and other prose.",
+    "Repair the stale upstream automocking-algorithm link to the section in the exported module mocking page.",
+    "Deduplicate three explicitly compared pages whose text differs only in whitespace/emphasis or is byte-identical; shared pages route version-sensitive links through the local index."
+  ],
+  "releases": [
+    {
+      "tag": "v5.0.3",
+      "commit": "33cadea62e8763c455c7fca38d9ab1dda87c5f75",
+      "published_at": "2026-09-30T11:25:52Z",
+      "selection": "latest_stable_major_5",
+      "source_url": "https://github.com/vitest-dev/vitest/tree/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs",
+      "license_sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551",
+      "documents": [
+        {
+          "title": "Testing in Practice",
+          "upstream_path": "docs/guide/learn/testing-in-practice.md",
+          "local_path": "shared/guide/learn/testing-in-practice.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/guide/learn/testing-in-practice.md",
+          "source_sha256": "b92e5194fc1941656cdaac3e9fa2d18a7dc69b30ecf81926305dbd7d0540101c",
+          "export_sha256": "2994a86256c9113d8c9e26b4482d7d13ab1fbbd8847f9cbbeec5e0eb45a56c09",
+          "included_sources": [],
+          "comparison": {
+            "storage": "shared",
+            "reason": "Only emphasis delimiters differ."
+          }
+        },
+        {
+          "title": "Writing Tests with AI",
+          "upstream_path": "docs/guide/learn/writing-tests-with-ai.md",
+          "local_path": "v5.0.3/guide/learn/writing-tests-with-ai.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/guide/learn/writing-tests-with-ai.md",
+          "source_sha256": "9ec2e23f00c0ab03a0fb3346248d1d1859b945d1a9e4e31410b54aebf4c356f8",
+          "export_sha256": "d5c1cc6f98f5dd35d62d6644eacfb4b4ed293cde1bc7a8f67ba1ed3fe9b16f84",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "Parameterized-test example uses test.each in v4 and test.for in v5."
+          }
+        },
+        {
+          "title": "CLI (including generated options)",
+          "upstream_path": "docs/guide/cli.md",
+          "local_path": "v5.0.3/guide/cli.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/guide/cli.md",
+          "source_sha256": "621b566c1e5a0f23926621817e256dfc3f7c3efa8f24fde254b43c7d13b9a699",
+          "export_sha256": "fb0a4fd86a25cbf13dbf143991141f545bbc2c07c550cc2dfcbdfde19ceaab3c",
+          "included_sources": [
+            {
+              "upstream_path": "docs/guide/cli-generated.md",
+              "sha256": "8146f3277bbddb5208ab9856d11a538afdf88e40d4d8233654b77b47f5987244"
+            }
+          ],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "vitest list static parsing defaults, doctor command, and generated CLI options differ."
+          }
+        },
+        {
+          "title": "Configuration overview",
+          "upstream_path": "docs/config/index.md",
+          "local_path": "v5.0.3/config/index.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/config/index.md",
+          "source_sha256": "012eff1260094509e0249e659a44aaf0f05afabcb0928255fa68972e346fc5d8",
+          "export_sha256": "cf352023239354b53814d16d0378869228441d4e9cc45e40ff04f712b25d0491",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "Default mode description and configuration discovery explanation differ."
+          }
+        },
+        {
+          "title": "Mocking",
+          "upstream_path": "docs/guide/mocking.md",
+          "local_path": "v5.0.3/guide/mocking.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/guide/mocking.md",
+          "source_sha256": "3a255eabe4049ef1961c3ffd1e2db9aa647463f7f7d9a5f430554f9f02cc2292",
+          "export_sha256": "7e5a9ba946a166e441f22e0f207c97e33546b33220408dd11978e3e13034700d",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "Temporal clock mocking is documented in v5."
+          }
+        },
+        {
+          "title": "Module mocking",
+          "upstream_path": "docs/guide/mocking/modules.md",
+          "local_path": "shared/guide/mocking/modules.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/guide/mocking/modules.md",
+          "source_sha256": "2b46649ce5fe1b52d180c3250bb6cc792a7ef088eb32cbb23ca1ad7c74c6166b",
+          "export_sha256": "80293bb72e5e2ac464d9e216ef4ef6115f6f15115312d650a380060ef2433e15",
+          "included_sources": [],
+          "comparison": {
+            "storage": "shared",
+            "reason": "Only blank lines differ."
+          }
+        },
+        {
+          "title": "Vi API",
+          "upstream_path": "docs/api/vi.md",
+          "local_path": "v5.0.3/api/vi.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/api/vi.md",
+          "source_sha256": "876eee184d429a98613624c5a40d78a93216606db1e7e200a7e5433954d6a51c",
+          "export_sha256": "32077816b5325c2c51b348c6ba9d3bc8e23a05b0870e2a98d298259c694468ee",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "v5 adds vi.when/vi.isWhenChain, Temporal clock support, and fake timer options."
+          }
+        },
+        {
+          "title": "Timers",
+          "upstream_path": "docs/guide/mocking/timers.md",
+          "local_path": "shared/guide/mocking/timers.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/guide/mocking/timers.md",
+          "source_sha256": "19b4c1e02374cbe40ef142f116b2c8d0f8717ab880fc5bbf861415cfdf658677",
+          "export_sha256": "3372b961bf8ad2bd2cbf9bc4117b94e51e3e89566eeefffffcd48a7ffe57d2e1",
+          "included_sources": [],
+          "comparison": {
+            "storage": "shared",
+            "reason": "Source bytes are identical."
+          }
+        },
+        {
+          "title": "Browser Mode",
+          "upstream_path": "docs/guide/browser/index.md",
+          "local_path": "v5.0.3/guide/browser/index.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/guide/browser/index.md",
+          "source_sha256": "082805badc6cd8979113f9512e757f1482a51c1dc94c970b8b4f646b9206d100",
+          "export_sha256": "4ec2fdc9535d8aa46ec6e2be8c7719b3b2a231ea61c6d7923dcf39890a4873ac",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "API configuration, browser compatibility, and async rendering examples differ."
+          }
+        },
+        {
+          "title": "Coverage",
+          "upstream_path": "docs/guide/coverage.md",
+          "local_path": "v5.0.3/guide/coverage.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/33cadea62e8763c455c7fca38d9ab1dda87c5f75/docs/guide/coverage.md",
+          "source_sha256": "2b289f253f5e4ae30414d3fe6a3d40fa05e8aa9805bbb13334bae83f659cb6e6",
+          "export_sha256": "f0deab3b4093c3d83fea18d13ee7a430cb179cc0429cebee7d3c149fd9d6efe8",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "Custom coverage reporter imports change to @vitest/istanbul-lib-report in v5."
+          }
+        }
+      ]
+    },
+    {
+      "tag": "v4.1.11",
+      "commit": "9bd8d464e6328c567c2dbcd8fdd977d57a9425c2",
+      "published_at": "2026-08-18T14:21:05Z",
+      "selection": "latest_stable_major_4",
+      "source_url": "https://github.com/vitest-dev/vitest/tree/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs",
+      "license_sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551",
+      "documents": [
+        {
+          "title": "Testing in Practice",
+          "upstream_path": "docs/guide/learn/testing-in-practice.md",
+          "local_path": "shared/guide/learn/testing-in-practice.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/guide/learn/testing-in-practice.md",
+          "source_sha256": "54996270030688c4caa36faab67868706b79132fb2a5b289fadd7b814710b733",
+          "export_sha256": "2994a86256c9113d8c9e26b4482d7d13ab1fbbd8847f9cbbeec5e0eb45a56c09",
+          "included_sources": [],
+          "comparison": {
+            "storage": "shared",
+            "reason": "Only emphasis delimiters differ."
+          }
+        },
+        {
+          "title": "Writing Tests with AI",
+          "upstream_path": "docs/guide/learn/writing-tests-with-ai.md",
+          "local_path": "v4.1.11/guide/learn/writing-tests-with-ai.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/guide/learn/writing-tests-with-ai.md",
+          "source_sha256": "3bde615b844ee0260649e430d9310fc5c022c45380c9fc542809ebfcf472ffb2",
+          "export_sha256": "ac0721dce5dfc194f2309abb029368f466d704562405bfc6714d01b27b669012",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "Parameterized-test example uses test.each in v4 and test.for in v5."
+          }
+        },
+        {
+          "title": "CLI (including generated options)",
+          "upstream_path": "docs/guide/cli.md",
+          "local_path": "v4.1.11/guide/cli.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/guide/cli.md",
+          "source_sha256": "99eec289164ee137aaf9d75ecc99aa89f772e6d0cb22a530786b1d74a7dfa3b4",
+          "export_sha256": "d85974c8a2ec37850da987881030e4c3c4c4abfff9c9814d3afbc2cfc24117e7",
+          "included_sources": [
+            {
+              "upstream_path": "docs/guide/cli-generated.md",
+              "sha256": "f4e21743ed30b1483bb819b2c6b093f8443445da22a2f2ba6e740da3fe684aab"
+            }
+          ],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "vitest list static parsing defaults, doctor command, and generated CLI options differ."
+          }
+        },
+        {
+          "title": "Configuration overview",
+          "upstream_path": "docs/config/index.md",
+          "local_path": "v4.1.11/config/index.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/config/index.md",
+          "source_sha256": "29e03769a67402aeb52f56391f0bfdd4c8dc220d6116efaea24fb43bb6108ee0",
+          "export_sha256": "1bc178d1bb9c0ef84c8aed1e1188c608d5ab12d93b1fa5637f98bd76e8604a15",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "Default mode description and configuration discovery explanation differ."
+          }
+        },
+        {
+          "title": "Mocking",
+          "upstream_path": "docs/guide/mocking.md",
+          "local_path": "v4.1.11/guide/mocking.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/guide/mocking.md",
+          "source_sha256": "2884c76ebfa337e5ceb3e11c8abac880b8237de530345bb35f8ad6491ae5c7bd",
+          "export_sha256": "ab81b26f6cb236c101ffe8a8c7b34352ac27ae90eb9735b6e5e04912c3bce7af",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "Temporal clock mocking is documented in v5."
+          }
+        },
+        {
+          "title": "Module mocking",
+          "upstream_path": "docs/guide/mocking/modules.md",
+          "local_path": "shared/guide/mocking/modules.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/guide/mocking/modules.md",
+          "source_sha256": "7e689ae94a7dad6592c767efdfa68bf6d0a4fbc7e596df0a62ae8c2e3d25b26f",
+          "export_sha256": "80293bb72e5e2ac464d9e216ef4ef6115f6f15115312d650a380060ef2433e15",
+          "included_sources": [],
+          "comparison": {
+            "storage": "shared",
+            "reason": "Only blank lines differ."
+          }
+        },
+        {
+          "title": "Vi API",
+          "upstream_path": "docs/api/vi.md",
+          "local_path": "v4.1.11/api/vi.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/api/vi.md",
+          "source_sha256": "b3d851d3bf48ebbfe87c993215ae646aa73daedbddb49ffd72374735c3f0a0f0",
+          "export_sha256": "cf2e1dcc089e0288d4f0522abd4a635bd3339c153ba716ea1bb74da622f3f4bc",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "v5 adds vi.when/vi.isWhenChain, Temporal clock support, and fake timer options."
+          }
+        },
+        {
+          "title": "Timers",
+          "upstream_path": "docs/guide/mocking/timers.md",
+          "local_path": "shared/guide/mocking/timers.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/guide/mocking/timers.md",
+          "source_sha256": "19b4c1e02374cbe40ef142f116b2c8d0f8717ab880fc5bbf861415cfdf658677",
+          "export_sha256": "3372b961bf8ad2bd2cbf9bc4117b94e51e3e89566eeefffffcd48a7ffe57d2e1",
+          "included_sources": [],
+          "comparison": {
+            "storage": "shared",
+            "reason": "Source bytes are identical."
+          }
+        },
+        {
+          "title": "Browser Mode",
+          "upstream_path": "docs/guide/browser/index.md",
+          "local_path": "v4.1.11/guide/browser/index.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/guide/browser/index.md",
+          "source_sha256": "971d4bd8c0beaef457d5c1823673c251e5a8e7efd066d1b739eec6c7d8084b84",
+          "export_sha256": "7a407a9aedd62016c1d57dfad0f644cb8eea09cec63a5bd6c49036312908a19c",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "API configuration, browser compatibility, and async rendering examples differ."
+          }
+        },
+        {
+          "title": "Coverage",
+          "upstream_path": "docs/guide/coverage.md",
+          "local_path": "v4.1.11/guide/coverage.md",
+          "upstream_url": "https://github.com/vitest-dev/vitest/blob/9bd8d464e6328c567c2dbcd8fdd977d57a9425c2/docs/guide/coverage.md",
+          "source_sha256": "832a7f9068d4e7754d99c35f3bbc30b3f9d15f5b98e4c0aac65fd49a4abe92d8",
+          "export_sha256": "f07547c569d6ee2d9b20b267e34188097377d10ba8df809b517794f179bd8c3b",
+          "included_sources": [],
+          "comparison": {
+            "storage": "version_specific",
+            "reason": "Custom coverage reporter imports change to @vitest/istanbul-lib-report in v5."
+          }
+        }
+      ]
+    }
+  ]
+}

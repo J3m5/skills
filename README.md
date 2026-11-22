@@ -20,6 +20,7 @@ Open a new Codex session to use the skills. Use `codex plugin marketplace upgrad
 | Version control                  | `git-core`, `github`, `hk`                                         |
 | Documentation and version checks | `documentation-policy`, `doc-grounding`, `version-first-grounding` |
 | Tooling and permissions          | `mise`, `sandbox-escalation-policy`                                |
+| Automated testing                | `test-engineering`                                                 |
 
 ## Package a skill
 

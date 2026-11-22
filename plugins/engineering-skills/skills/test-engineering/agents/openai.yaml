@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Engineering"
+  short_description: "Behavioral tests, regression coverage, and test audits"
+  default_prompt: "Use $test-engineering to design, implement, or review meaningful tests for this change using the project’s existing testing tools."

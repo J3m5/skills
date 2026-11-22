@@ -1,4 +1,7 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "ignorePatterns": []
+  "ignorePatterns": [
+    "plugins/engineering-skills/skills/test-engineering/assets/vitest/shared/**",
+    "plugins/engineering-skills/skills/test-engineering/assets/vitest/v*/**"
+  ]
 }
