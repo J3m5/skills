@@ -1,0 +1,7 @@
+interface:
+  display_name: "Git Core"
+  short_description: "Manage Git changes, dependent branches, and performance"
+  default_prompt: "Use $git-core to complete this Git change while preserving unrelated local work."
+
+policy:
+  allow_implicit_invocation: true

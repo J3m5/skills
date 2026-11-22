@@ -1,0 +1,7 @@
+interface:
+  display_name: "Version-First Grounding"
+  short_description: "Ground decisions in the effective version in use."
+  default_prompt: "Use $version-first-grounding to identify the version surface and strongest matching evidence, preserve explicit targets and action scope, and compare versions only when relevant."
+
+policy:
+  allow_implicit_invocation: true

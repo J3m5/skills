@@ -1,0 +1,4 @@
+interface:
+  display_name: "hk"
+  short_description: "Configure and troubleshoot hk hooks and checks"
+  default_prompt: "Use $hk to configure or diagnose this project's hooks and checks."

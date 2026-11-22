@@ -1,0 +1,4 @@
+interface:
+  display_name: "Documentation Policy"
+  short_description: "Govern and audit repository documentation"
+  default_prompt: "Use $documentation-policy to make the requested repository documentation changes, preserve important knowledge, and validate the result."

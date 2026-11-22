@@ -4,17 +4,28 @@ This repository publishes reusable Agent Skills through a Codex marketplace.
 
 Skills are self-contained folders with instructions, scripts, and supporting assets that help agents execute recurring tasks consistently.
 
-## Add the marketplace in Codex
+## Install in Codex
 
 ```bash
 codex plugin marketplace add J3m5/skills
+codex plugin add engineering-skills@j3m5-skills
 ```
 
-The catalog is currently empty. Use `codex plugin marketplace upgrade j3m5-skills` to fetch future catalog updates.
+If you already added the marketplace, run `codex plugin marketplace upgrade j3m5-skills` before installing the plugin. Open a new Codex session to use the skills.
+
+## Included skills
+
+| Area                             | Skills                                                             |
+| -------------------------------- | ------------------------------------------------------------------ |
+| Version control                  | `git-core`, `github`, `hk`                                         |
+| Documentation and version checks | `documentation-policy`, `doc-grounding`, `version-first-grounding` |
+| Tooling and permissions          | `mise`, `sandbox-escalation-policy`                                |
 
 ## Package a skill
 
 Add packaged skills under `plugins/<plugin-name>/skills/<skill-name>/` with a `SKILL.md` and any resources they use. Add the plugin package to the [marketplace manifest](./.agents/plugins/marketplace.json) when it is ready to distribute.
+
+An external plugin can be listed directly from Git using a `url` or `git-subdir` source. Link to the plugin package and pin its Git ref or SHA as needed. [Codex marketplace format](https://developers.openai.com/plugins/build/plugins#marketplace-metadata)
 
 ## Tooling
 

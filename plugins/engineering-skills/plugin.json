@@ -1,0 +1,17 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "engineering-skills",
+  "version": "0.1.0",
+  "description": "Workflows for Git, GitHub, project tooling, technical documentation, and sandbox permissions.",
+  "author": {
+    "name": "J3m5"
+  },
+  "repository": "https://github.com/J3m5/skills",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Engineering Skills"
+      }
+    }
+  }
+}

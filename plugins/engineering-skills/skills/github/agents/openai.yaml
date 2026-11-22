@@ -1,0 +1,7 @@
+interface:
+  display_name: "GitHub"
+  short_description: "Use gh for PRs, issues, discussions, releases, and checks."
+  default_prompt: "Use $github to route GitHub work through gh for PRs, issues, discussions, checks, CI, releases, changelogs, repo docs, remotes, repo comparisons, current-branch PR lookup, and GitHub CLI agent skills."
+
+policy:
+  allow_implicit_invocation: true

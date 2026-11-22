@@ -15,10 +15,9 @@ Repository tree:
 ├── .oxfmtrc.json
 ├── .gitignore
 ├── plugins/
-│   └── agent-skills/
+│   └── engineering-skills/
 │       ├── plugin.json
 │       └── skills/
-│           └── report-generator/
 ├── skills/
 │   ├── .system/
 │   │   ├── skill-creator/
@@ -32,7 +31,7 @@ Repository tree:
 ```
 
 `backup/` is intentionally local-only and ignored by Git. Do not place publishable skill content there.
-The `skills/` directory holds skills from the previous repository layout. Only packages listed in the marketplace manifest are offered for installation through Codex.
+Earlier skills are kept outside the current catalog. Only packages listed in the marketplace manifest are offered for installation through Codex.
 
 ## Build, Test, and Development Commands
 

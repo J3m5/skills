@@ -1,0 +1,7 @@
+interface:
+  display_name: "Sudo And Sandbox Escalation"
+  short_description: "Resolve sandbox access and sudo authentication"
+  default_prompt: "Use $sandbox-escalation-policy to resolve the permissions or authentication needed for this command."
+
+policy:
+  allow_implicit_invocation: true
