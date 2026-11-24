@@ -13,6 +13,10 @@ preloaded. Use a Bash here-string for a quick command.
 browser-harness <<< 'print(current_tab())'
 ```
 
+`current_tab()` reports the active target for the task and can create a blank
+tab for a fresh owner. For a connection check, use the existing-daemon
+diagnostic in [Connection](references/interaction-skills/connection.md).
+
 Use a quoted heredoc to group actions whose inputs are already known, or
 `browser-harness < script.py` for an existing program. The first browser call
 starts the daemon. If the CLI is missing or a browser call fails to connect,

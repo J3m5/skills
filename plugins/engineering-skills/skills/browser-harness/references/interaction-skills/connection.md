@@ -5,21 +5,21 @@ the tool, use `mise exec -- browser-harness` if the CLI is missing from PATH.
 For installation, see the [Browser Harness package](https://pypi.org/project/browser-harness/).
 
 Run a browser command first. The daemon starts on demand. Use
-`browser-harness --doctor` if the command fails. To check an existing daemon
-without starting it, run `browser-harness doctor --json --require-existing-daemon`.
-
-When a daemon is already running, reuse its socket from the default sandbox.
-Set `BH_REQUIRE_EXISTING_DAEMON=1` when the task expects an existing connection.
-
-```bash
-BH_REQUIRE_EXISTING_DAEMON=1 browser-harness <<< 'print(current_tab())'
-```
+`browser-harness --doctor` if the command fails.
 
 An error writing `bu-*.spawnlock` means daemon startup needs write access to
 its runtime directory. A live daemon socket can still be reached when that
 directory is read-only. If startup requires approval, scope it to startup.
-For the next browser call, use the existing-daemon probe above from the default
-sandbox. Continue navigation and clicks there if the probe succeeds.
+Then check the existing connection from the default sandbox. This diagnostic
+leaves the daemon and tabs as they are.
+
+```bash
+browser-harness doctor --json --require-existing-daemon
+```
+
+If it reports a healthy connection, continue in the default sandbox. Reuse the
+same daemon name and runtime directory. For browser scripts that should use
+the existing connection or fail, set `BH_REQUIRE_EXISTING_DAEMON=1`.
 
 - If Chrome requests remote debugging permission, keep the original command
   running and wait for the user to click **Allow**. If debugging is disabled,
