@@ -1,4 +1,4 @@
-# Graphical askpass for applications
+# Graphical password prompts for applications
 
 Use this path when the operator wants the agent to start a specific operation
 and the only interaction needed is entering an application password.

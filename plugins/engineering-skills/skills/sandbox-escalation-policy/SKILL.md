@@ -4,7 +4,8 @@ description: >-
   Resolve sandbox access blocks, escalation denials, and sudo authentication
   for local or SSH commands. Use when permissions or elevation need a decision
   or diagnosis, or when an agent-run command needs the operator to enter an
-  application password through a graphical askpass prompt.
+  application password through a masked graphical prompt, such as a native
+  password dialog, an askpass helper, or Zenity.
 ---
 
 # Sandbox Escalation Policy
@@ -28,9 +29,9 @@ controls in place unless administering them is part of the authorized task.
 
 - Read [Local sudo](references/sudo-local.md) to select or diagnose a local authentication channel.
 - Read [Sudo over SSH](references/sudo-ssh.md) when the privileged command runs on a remote host.
-- Read [Graphical askpass for applications](references/askpass.md) when the
-  operator wants the agent to start an authorized operation and open a masked
-  password prompt, for example to unlock a Vaultwarden vault with `bw`.
+- Read [Graphical password prompts](references/askpass.md) when the operator
+  wants the agent to start an authorized operation and open a masked password
+  prompt, for example to unlock a Vaultwarden vault with `bw`.
 
 ## Decide whether to retry
 
