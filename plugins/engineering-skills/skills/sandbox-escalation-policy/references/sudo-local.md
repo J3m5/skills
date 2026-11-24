@@ -37,5 +37,21 @@ authentication step the user must perform.
   or `tee`, with reviewed inputs. In `sudo echo ... > file`, the calling shell
   opens the file before `sudo` runs.
 
+## Use the desktop's file administration service
+
+For an authorized local file copy on a Linux desktop, GVfs may already offer
+its `admin:///` backend. This is useful when the execution environment prevents
+`sudo` from gaining privileges, for example under `no_new_privs`. Check that the
+backend is installed and the operator's desktop session is reachable. Let
+Polkit handle authentication through its system dialog.
+
+Use the reviewed source and exact destination. If GIO reports that the
+location is not mounted, mount the enclosing volume with the GIO
+`GFile.mount_enclosing_volume` API and perform the copy in the same client.
+Some GVfs admin mounts are scoped to that client. Use a copy that fails if the
+destination already exists unless replacement was authorized. Verify the
+installed contents, owner and mode before reporting success.
+
+- [GVfs administration backend](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/9/html/administering_the_system_using_the_gnome_desktop_environment/managing-storage-volumes-in-gnome)
 - [sudo options](https://www.sudo.ws/docs/man/sudo.man/)
 - [sudoers policy and credential caching](https://www.sudo.ws/docs/man/sudoers.man/)

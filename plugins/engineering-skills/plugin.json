@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "engineering-skills",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Workflows for Git, GitHub, GitLab, automated testing, browser automation, web platform guidance, project tooling, technical documentation, sandbox permissions, and publishing.",
   "author": {
     "name": "J3m5"

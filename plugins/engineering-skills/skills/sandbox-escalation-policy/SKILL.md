@@ -3,7 +3,8 @@ name: sandbox-escalation-policy
 description: >-
   Resolve sandbox access blocks, escalation denials, and sudo authentication
   for local or SSH commands. Use when permissions or elevation need a decision
-  or diagnosis.
+  or diagnosis, or when an agent-run command needs the operator to authenticate
+  through a native desktop dialog or a masked password prompt such as askpass.
 ---
 
 # Sandbox Escalation Policy
@@ -26,7 +27,12 @@ grant a shell, interpreter, or arbitrary `sudo` commands. Leave global security
 controls in place unless administering them is part of the authorized task.
 
 - Read [Local sudo](references/sudo-local.md) to select or diagnose a local authentication channel.
-- Read [Sudo over SSH](references/sudo-ssh.md) when the privileged command runs on a remote host.
+- Read [Sudo over SSH](references/sudo-ssh.md) when `sudo` runs on a remote
+  host, including when the operator asks for a graphical prompt.
+- Read [Graphical password prompts](references/graphical-password-prompts.md)
+  when the operator wants a masked prompt for an application password. For
+  native desktop authentication or a password helper with `bw unlock`, read
+  [Bitwarden CLI and Vaultwarden](references/bitwarden-vaultwarden.md).
 
 ## Decide whether to retry
 
