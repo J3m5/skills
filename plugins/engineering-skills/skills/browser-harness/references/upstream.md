@@ -1,5 +1,5 @@
-# Upstream references
+# Upstream sources
 
-The files in `interaction-skills/` come from [Browser Harness v0.1.13](https://github.com/browser-use/browser-harness/tree/c24e5072ee66f8499bacd663f4f4bcb089bc4492/interaction-skills).
-
-Commit `c24e5072ee66f8499bacd663f4f4bcb089bc4492`. See the [upstream license](../LICENSE).
+This skill adapts [Browser Harness v0.1.14](https://github.com/browser-use/browser-harness/tree/78dca5346138ab2bebd372308eeaeba6788f14cc).
+Maintain the skill and references in Engineering Skills. The upstream material
+retains its [MIT license](../LICENSE).

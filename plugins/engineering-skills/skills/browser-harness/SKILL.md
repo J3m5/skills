@@ -1,59 +1,41 @@
 ---
 name: browser-harness
-description: Control a local Chrome or Chromium browser with Browser Harness when a task needs rendered UI, browser interaction, an authenticated session, screenshots, recordings, or browser-side files. Use native web tools for ordinary public search and page retrieval.
+description: Control a local Chrome or Chromium browser through Browser Harness for UI interaction, signed-in sessions, screenshots, and browser uploads or downloads. Use web or fetch tools for ordinary public page retrieval.
 ---
 
 # Browser Harness
 
-Use this skill when Browser Harness is the chosen browser tool. Check for the
-`browser-harness` executable and run `browser-harness --version` for version
-checks. The Codex plugin supplies the skill. The CLI is a separate prerequisite.
-See [Connection](references/connection.md) for setup and troubleshooting.
-
-## Run a program
-
-The upstream CLI reads Python on stdin and pre-imports its browser helpers:
+Send Python to the CLI on standard input. The browser helpers are preloaded.
+Use a Bash here-string for a quick command.
 
 ```bash
-browser-harness <<'PY'
-print(page_info())
-PY
+browser-harness <<< 'print(current_tab())'
 ```
 
-If the installed command is the local wrapper, it also accepts
-`browser-harness --code 'print(page_info())'` and `browser-harness --script FILE`.
-The current environment's sandbox and approval policy controls access. If the
-browser profile, runtime socket, or CDP endpoint requires access outside the
-sandbox, use the supported approval mechanism for the specific operation.
+Use a quoted heredoc for several lines or `browser-harness < script.py` for
+an existing program. The first browser call starts the daemon. If the CLI is
+missing or the browser fails to connect, see [Connection](references/interaction-skills/connection.md).
 
 ## Work in the browser
 
-- Start with `current_tab()` and `list_tabs(include_chrome=False)`. Reuse
-  the tab already assigned to the task with `switch_tab(target_id)`. If no
-  suitable tab exists, use `new_tab(url)` once and reuse it across invocations.
-  Preserve other user tabs and their navigation.
-- `switch_tab()` attaches without changing the visible tab. Use
-  `activate_tab(target_id)` when the user asks to see it or when the page
-  demonstrably needs visibility. Read [Tabs](references/tabs.md) and
-  [Scrolling](references/interaction-skills/scrolling.md) for these cases.
-- After navigation, wait for the load and verify the target URL and page
-  state. To act on UI, find the element in the accessibility tree or DOM,
-  use fresh bounds for coordinate input, and verify the result. Capture a
-  screenshot when visual evidence matters.
-- Use the intended signed-in session. Pause for passwords, MFA, consent, or
-  ambiguous account selection. Confirm authorization for externally visible
-  writes and verify their outcome before retrying.
-
-For an explicitly requested recording, use `BH_RECORD=1` for the relevant
-invocations and `browser-harness recordings --latest` to locate the trace.
-Use the video reference before exporting or sharing a recording.
+1. Use `new_tab(url)` to start work on a page. The daemon remembers the
+   current tab across calls. To work in a specific existing tab, find it
+   with `list_tabs(include_chrome=False)` and pass the matching tab to
+   `switch_tab(tab)`. See [Tabs](references/interaction-skills/tabs.md) for
+   parallel tasks and visibility.
+2. Verify the URL after navigation. For dynamic content, check the result of
+   `wait_for_element(selector, timeout=10, visible=True)`.
+3. Find the control with `js(...)` or `cdp("Accessibility.getFullAXTree")`.
+   Use `fill_input(selector, text)` for text. For a coordinate click, get
+   fresh viewport coordinates and call `click_at_xy(x, y)`. Verify the
+   expected state before continuing or retrying an action.
+4. Use the intended signed-in session. Pause for passwords, MFA, consent,
+   or ambiguous account selection.
 
 ## References
 
-Read the relevant note when an action calls for more detail.
-
-- Browser output: [screenshots](references/interaction-skills/screenshots.md),
-  [recordings and video](references/interaction-skills/make-video.md),
-  [viewport](references/interaction-skills/viewport.md).
-- Files: [uploads and downloads](references/files.md).
-- Native alerts, confirmations, and prompts: [dialogs](references/interaction-skills/dialogs.md).
+- For visual evidence or input geometry, see [Screenshots](references/interaction-skills/screenshots.md),
+  [Scrolling](references/interaction-skills/scrolling.md), and [Viewport](references/interaction-skills/viewport.md).
+- For a native browser prompt, see [Dialogs](references/interaction-skills/dialogs.md).
+- For file transfer, see [Uploads and downloads](references/files.md).
+- For an explicitly requested recording or video, see [Recordings and video](references/interaction-skills/make-video.md).

@@ -1,13 +1,23 @@
-# Make a video
+# Recordings and video
 
-Use captured frames as evidence. Never reenact a finished task or fabricate a
-cleaner result.
+## Record a task
 
-## Workflow
+Start a recording when the user asks for a recording or a video of the task.
+A request to show a tab can be handled by making the tab visible.
 
-Use the exact recording selected under `SKILL.md`; never replay browser work to
-manufacture missing footage. For a post-task recording, verify `meta.json` and
-`events.jsonl` match the task.
+Before the first action to capture, call `start_recording(name, title=...)`
+with a unique name and save the returned directory. Reuse the task's daemon
+and, if set, its `BH_OWNER` across calls. When the task is done, call
+`stop_recording()` and check that the directory contains frames.
+
+For a request made after the task, use `browser-harness recordings --latest`
+and check that `meta.json` and `events.jsonl` match the task. If there is no
+matching recording, report that the work was uncaptured.
+
+## Make a video
+
+Use the verified recording directory. Keep the sequence grounded in the
+captured frames and events.
 
 ```bash
 browser-harness video init <recording> --require-explicit

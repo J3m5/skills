@@ -1,6 +1,7 @@
 # Viewport
 
-Cover how viewport size changes affect layout, coordinate clicks, and any workflow that depends on stable geometry.
+After a viewport resize or layout change, measure the control again before
+clicking. CDP mouse coordinates are viewport CSS pixels.
 
 ## Touch emulation
 
