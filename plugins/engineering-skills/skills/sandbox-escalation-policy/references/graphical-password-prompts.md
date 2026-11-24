@@ -27,26 +27,3 @@ and the only interaction needed is entering an application password.
    verify its outcome if the application has already run it. Clean up any
    temporary session the workflow created on success or failure, and report
    only a non-sensitive result.
-
-## Example with Bitwarden CLI and Vaultwarden
-
-- On the desktop, verify the expected Vaultwarden server and CLI account.
-  Use an existing authorized session if it is available to the runner.
-  Unlocking or locking can invalidate session keys for the same account in
-  the same CLI profile, including in other terminals. If those sessions
-  need to stay active, use a separately configured profile or check with the
-  operator before proceeding. When using a separate profile, set
-  `BITWARDENCLI_APPDATA_DIR` for every `bw` command, including cleanup.
-- If an unlock is needed, open the password dialog and run
-  `bw unlock --passwordenv APP_UNLOCK_PASSWORD --raw` with
-  `APP_UNLOCK_PASSWORD` set only in the unlock process's environment.
-  Capture the returned session key privately. Whether reusing or creating a
-  session, pass `BW_SESSION` only to `bw` processes that need it.
-- If an authorized import uses a vault record, verify the expected record and
-  organization. Extract only the required fields. For a remote import, send
-  those fields directly over SSH on standard input to the verified operation
-  on the expected host. Keep the password, session key, and full record on the
-  desktop.
-- Run `bw lock` in the runner's cleanup path if the runner unlocked that
-  profile for this operation. Discard the temporary session key and check
-  cleanup without printing secret-bearing command output.
