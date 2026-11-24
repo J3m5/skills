@@ -31,6 +31,7 @@ codex plugin remove browser-harness@j3m5-skills
 | Automated testing                | `test-engineering`                                                 |
 | Continuous integration           | `gitlab-ci-skill`                                                  |
 | Browser automation               | `playwright-cli`, `browser-harness`                                |
+| Web platform guidance            | `modern-web-guidance`                                              |
 | Collaboration and publishing     | `write-and-publish`                                                |
 
 Browser automation requires the corresponding Playwright CLI or Browser Harness

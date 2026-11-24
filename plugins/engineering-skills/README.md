@@ -32,6 +32,13 @@ this plugin. The [source record](skills/browser-harness/references/upstream.md)
 identifies the upstream release used as the baseline. Keep the
 [upstream MIT license](skills/browser-harness/LICENSE) with the bundled material.
 
+## Modern Web Guidance
+
+Invoke `$modern-web-guidance` explicitly in Codex for web platform guidance.
+The [skill](skills/modern-web-guidance/SKILL.md) uses Node.js 22 or newer to run
+the upstream CLI with telemetry disabled on every call. The guide catalog is
+provided by the CLI. [Modern Web Guidance](https://github.com/GoogleChrome/modern-web-guidance)
+
 ## GitLab CLI and CI
 
 Use `engineering-skills:glab` for GitLab operations through the [GitLab CLI](https://docs.gitlab.com/cli/).
