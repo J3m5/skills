@@ -5,16 +5,18 @@ description: Control a local Chrome or Chromium browser through Browser Harness 
 
 # Browser Harness
 
-Send Python to the CLI on standard input. The browser helpers are preloaded.
-Use a Bash here-string for a quick command.
+Use the default sandbox for browser interactions, including after an approved
+daemon startup. The CLI takes Python on standard input with browser helpers
+preloaded. Use a Bash here-string for a quick command.
 
 ```bash
 browser-harness <<< 'print(current_tab())'
 ```
 
-Use a quoted heredoc for several lines or `browser-harness < script.py` for
-an existing program. The first browser call starts the daemon. If the CLI is
-missing or the browser fails to connect, see [Connection](references/interaction-skills/connection.md).
+Use a quoted heredoc to group actions whose inputs are already known, or
+`browser-harness < script.py` for an existing program. The first browser call
+starts the daemon. If the CLI is missing or a browser call fails to connect,
+see [Connection](references/interaction-skills/connection.md).
 
 ## Work in the browser
 
