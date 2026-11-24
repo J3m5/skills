@@ -30,9 +30,9 @@ controls in place unless administering them is part of the authorized task.
 - Read [Local sudo](references/sudo-local.md) to select or diagnose a local authentication channel.
 - Read [Sudo over SSH](references/sudo-ssh.md) when `sudo` runs on a remote
   host, including when the operator asks for a graphical prompt.
-- Read [Graphical password prompts](references/askpass.md) when the operator
-  wants a masked prompt for an application password, for example to unlock a
-  Vaultwarden vault with `bw`.
+- Read [Graphical password prompts](references/graphical-password-prompts.md)
+  when the operator wants a masked prompt for an application password, for
+  example to unlock a Vaultwarden vault with `bw`.
 
 ## Decide whether to retry
 
