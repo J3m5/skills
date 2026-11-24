@@ -28,10 +28,11 @@ grant a shell, interpreter, or arbitrary `sudo` commands. Leave global security
 controls in place unless administering them is part of the authorized task.
 
 - Read [Local sudo](references/sudo-local.md) to select or diagnose a local authentication channel.
-- Read [Sudo over SSH](references/sudo-ssh.md) when the privileged command runs on a remote host.
+- Read [Sudo over SSH](references/sudo-ssh.md) when `sudo` runs on a remote
+  host, including when the operator asks for a graphical prompt.
 - Read [Graphical password prompts](references/askpass.md) when the operator
-  wants the agent to start an authorized operation and open a masked password
-  prompt, for example to unlock a Vaultwarden vault with `bw`.
+  wants a masked prompt for an application password, for example to unlock a
+  Vaultwarden vault with `bw`.
 
 ## Decide whether to retry
 
